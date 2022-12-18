@@ -22,6 +22,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private AudioClip battleWinSound;
     [SerializeField] private AudioClip battleLoseSound;
 
+    [SerializeField] private AudioClip clickButtonSound;
+
     private AudioSource battleSound;
     private bool battleIsOver;
     private bool battleStartStatus;
@@ -133,6 +135,7 @@ public class GameController : MonoBehaviour
     {
         this.exitButton.SetActive(false);
         this.playButton.SetActive(false);
+        playSoundClip(clickButtonSound);
         battleStartStatus = true;
     }
 
@@ -147,6 +150,7 @@ public class GameController : MonoBehaviour
 
     public void ExitBattle()
     {
+        playSoundClip(clickButtonSound);
         Application.Quit();
     }
 
@@ -170,5 +174,11 @@ public class GameController : MonoBehaviour
     public void SetBattleStartStatus(bool battleStartStatus)
     {
         this.battleStartStatus = battleStartStatus;
+    }
+
+    public void playSoundClip(AudioClip audioClip)
+    {
+        battleSound.clip = audioClip;
+        battleSound.Play();
     }
 }

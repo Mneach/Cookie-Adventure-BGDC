@@ -20,6 +20,9 @@ public class UIController : MonoBehaviour
     [Header("Game Status")]
     [SerializeField] private GameObject battleStatusText;
 
+    [Header("Sound")]
+    [SerializeField] private AudioClip clickButtonSound;
+
     private void Awake()
     {
         if (UIControllerInstance != null && UIControllerInstance != this)

@@ -643,6 +643,7 @@ MonoBehaviour:
   battleBackgroundSound: {fileID: 852524978}
   battleWinSound: {fileID: 8300000, guid: aa0f45fc32936204b93ab847f54dde82, type: 3}
   battleLoseSound: {fileID: 8300000, guid: 7fd928863918c6f45abe918b02145041, type: 3}
+  clickButtonSound: {fileID: 0}
 --- !u!4 &104695196
 Transform:
   m_ObjectHideFlags: 0
@@ -1664,6 +1665,7 @@ MonoBehaviour:
   attackWithAllyButton: {fileID: 1547695391}
   escapeButton: {fileID: 607268065}
   battleStatusText: {fileID: 0}
+  clickButtonSound: {fileID: 0}
 --- !u!4 &361401833
 Transform:
   m_ObjectHideFlags: 0
@@ -1788,8 +1790,9 @@ MonoBehaviour:
   healthFillText: {fileID: 1921678346}
   magicFillText: {fileID: 1595273600}
   health: 100
-  magic: 35
-  melee: 15
+  magic: 50
+  meleeDamage: 20
+  magicDamage: 30
   range: 5
   defense: 5
   speed: 7
@@ -5557,7 +5560,8 @@ MonoBehaviour:
   magicFillText: {fileID: 584548824}
   health: 100
   magic: 50
-  melee: 0
+  meleeDamage: 0
+  magicDamage: 0
   range: 8
   defense: 4
   speed: 5
@@ -6163,8 +6167,9 @@ MonoBehaviour:
   healthFillText: {fileID: 240173606}
   magicFillText: {fileID: 584548824}
   health: 100
-  magic: 30
-  melee: 20
+  magic: 50
+  meleeDamage: 25
+  magicDamage: 35
   range: 8
   defense: 4
   speed: 5
