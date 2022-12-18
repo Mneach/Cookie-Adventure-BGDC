@@ -20,7 +20,7 @@ public class ActionMeterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameController.GetBattleStartStatus() == true)
+        if (gameController.GetBattleStartStatus() == true)
         {
             speedHandler();
             moveHanlder();
@@ -33,11 +33,13 @@ public class ActionMeterController : MonoBehaviour
         {
             SetMoveFighterStat(heroMeterHandler.GetFighterStats());
             SetCurrentMeterHanlder(heroMeterHandler);
-        } else if (enemyMeterHandler.GetActionStatus() == true) { 
+        }
+        else if (enemyMeterHandler.GetActionStatus() == true)
+        {
             SetMoveFighterStat(enemyMeterHandler.GetFighterStats());
             SetCurrentMeterHanlder(enemyMeterHandler);
         }
-        
+
     }
 
     void speedHandler()

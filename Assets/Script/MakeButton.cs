@@ -20,14 +20,19 @@ public class MakeButton : MonoBehaviour
     {
         if (button.CompareTo("MeleeButton") == 0)
         {
-            hero.GetComponent<FighterAction>().SelectAttack("melee");
-        }else if(button.CompareTo("MagicButton") == 0)
-        {
-            hero.GetComponent<FighterAction>().SelectAttack("magic");
+            hero.GetComponent<FighterAction>().SelectAction("melee");
         }
-        else
+        else if (button.CompareTo("MagicButton") == 0)
         {
-            hero.GetComponent<FighterAction>().SelectAttack("run");
+            hero.GetComponent<FighterAction>().SelectAction("magic");
+        }
+        else if (button.CompareTo("CallAllyButton") == 0)
+        {
+            hero.GetComponent<FighterAction>().SelectAction("call_ally");
+        }
+        else if (button.CompareTo("EscapeButton") == 0)
+        {
+            hero.GetComponent<FighterAction>().SelectAction("escape");
         }
     }
 }

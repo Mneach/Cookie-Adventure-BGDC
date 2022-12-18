@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 using TMPro;
 
-public class FighterStats : MonoBehaviour , IComparable
+public class FighterStats : MonoBehaviour, IComparable
 {
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject healthFill;
@@ -20,7 +20,8 @@ public class FighterStats : MonoBehaviour , IComparable
     [Header("stats")]
     public float health;
     public float magic;
-    public float melee;
+    public float meleeDamage;
+    public float magicDamage;
     public float range;
     public float defense;
     public float speed;
@@ -69,7 +70,7 @@ public class FighterStats : MonoBehaviour , IComparable
     {
         health -= damage;
         animator.Play("Damaged");
-        if(health < 0) updateHealtFillText(0);
+        if (health < 0) updateHealtFillText(0);
         else updateHealtFillText((int)health);
 
         if (health <= 0)
@@ -87,31 +88,32 @@ public class FighterStats : MonoBehaviour , IComparable
             gameController.GetComponent<GameController>().setBattleStatusText(battleStatusText);
             gameController.GetComponent<GameController>().SetBattleStartStatus(false);
             gameObject.tag = "Dead";
-            
-        }else if(damage > 0)
+
+        }
+        else if (damage > 0)
         {
             xNewHealthScale = healthScale.x * (health / startHealth);
-            healthFill.transform.localScale = new Vector2(xNewHealthScale , healthScale.y);
+            healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
         }
-        if( damage > 0)
+        if (damage > 0)
         {
             Vector3 spawnTextPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            DamagePopup.Create(spawnTextPosition, (int) damage, HeadsUpCanvas, damagePopupPrefab);
+            DamagePopup.Create(spawnTextPosition, (int)damage, HeadsUpCanvas, damagePopupPrefab);
         }
 
-        if(health > 0) gameController.GetComponent<GameController>().ContinueGame();
+        if (health > 0) gameController.GetComponent<GameController>().ContinueGame();
     }
 
     public void UpdateMagicFill(float cost)
     {
-        if(cost > 1)
+        if (cost > 1)
         {
             magic -= cost;
-            updateMagicFillText((int) magic);
+            updateMagicFillText((int)magic);
             xNewMagicScale = magicScale.x * (magic / startMagic);
             magicFill.transform.localScale = new Vector2(xNewMagicScale, magicScale.y);
         }
-        
+
     }
 
     public void updateHealtFillText(int currentHealthAmout)

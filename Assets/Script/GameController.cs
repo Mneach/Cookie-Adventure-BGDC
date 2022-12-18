@@ -5,10 +5,10 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    private List<FighterStats> fighterStats;
-    // Start is called before the first frame update
-    [SerializeField] private ActionMeterController actionMeterController;
+    // SINGELTON
+    public static GameController gameControllerInstance;
 
+    [SerializeField] private ActionMeterController actionMeterController;
 
     [Header("Button")]
     [SerializeField] private GameObject battleMenu;
@@ -25,15 +25,26 @@ public class GameController : MonoBehaviour
     private AudioSource battleSound;
     private bool battleIsOver;
     private bool battleStartStatus;
+
+    private void Awake()
+    {
+        if (gameControllerInstance != null && gameControllerInstance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            gameControllerInstance = this;
+        }
+    }
     void Start()
     {
-        fighterStats = new List<FighterStats>();
         GameObject hero = GameObject.FindGameObjectWithTag("Hero");
         GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 
         FighterStats currentFighterStats = hero.GetComponent<FighterStats>();
         FighterStats currentEnemyStats = enemy.GetComponent<FighterStats>();
-        
+
         SetupButtonFirst();
 
         battleIsOver = false;
@@ -47,9 +58,9 @@ public class GameController : MonoBehaviour
 
     public void NextTurn(FighterStats currentFighterStats)
     {
-        if(battleIsOver == false)
+        if (battleIsOver == false)
         {
-            if(currentFighterStats != null)
+            if (currentFighterStats != null)
             {
                 Debug.Log("tester321");
                 if (currentFighterStats.GetDead() == false)
@@ -75,7 +86,7 @@ public class GameController : MonoBehaviour
                             attackType = "magic";
                         }
                         Debug.Log("tester");
-                        currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                        currentUnit.GetComponent<FighterAction>().SelectAction(attackType);
                     }
                     ShowBattleStatusText();
                 }
