@@ -27,3 +27,7 @@ https://binusianorg-my.sharepoint.com/personal/muhamad_fitrayuda_binus_ac_id/_la
 
 -   Add New Combat Fitur (Call Ally)
 -   Add UI Controller
+
+# Update 1.3
+
+-   Changed some of the placeholder sprites with original sprites made by game artists
