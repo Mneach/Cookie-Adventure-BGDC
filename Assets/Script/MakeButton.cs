@@ -18,19 +18,19 @@ public class MakeButton : MonoBehaviour
 
     private void AttachCallBack(string button)
     {
-        if (button.CompareTo("MeleeButton") == 0)
+        if (button.CompareTo("MeleeParentButton") == 0 || button.CompareTo("MeleeSprite") == 0)
         {
             hero.GetComponent<FighterAction>().SelectAction("melee");
         }
-        else if (button.CompareTo("MagicButton") == 0)
+        else if (button.CompareTo("MagicParentButton" ) == 0 || button.CompareTo("MagicSprite") == 0)
         {
             hero.GetComponent<FighterAction>().SelectAction("magic");
         }
-        else if (button.CompareTo("CallAllyButton") == 0)
+        else if (button.CompareTo("CallAllyParentButton" ) == 0 || button.CompareTo("CallAllySprite") == 0)
         {
             hero.GetComponent<FighterAction>().SelectAction("call_ally");
         }
-        else if (button.CompareTo("EscapeButton") == 0)
+        else if (button.CompareTo("EscapeParentButton") == 0 || button.CompareTo("EscapeSprite") == 0)
         {
             hero.GetComponent<FighterAction>().SelectAction("escape");
         }

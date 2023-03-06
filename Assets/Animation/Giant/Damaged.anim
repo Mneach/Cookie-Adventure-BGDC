@@ -20,13 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -509899026, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
-    - time: 0.16666667
-      value: {fileID: -2081733642, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
-    - time: 0.33333334
-      value: {fileID: -1217078556, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
-    - time: 0.5
-      value: {fileID: -2034282296, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
+      value: {fileID: 21300000, guid: 1725fc99044bc194bb8d5adbd79a7815, type: 3}
+    - time: 0.11666667
+      value: {fileID: 21300000, guid: 04ca3ce61b508ed478afb91414bc83c3, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 8a3910358ba833e4da529c45be3640ee, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -47,16 +45,15 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: -509899026, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
-    - {fileID: -2081733642, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
-    - {fileID: -1217078556, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
-    - {fileID: -2034282296, guid: 19b3938ded20f0a42b4e7ed4aaca0c07, type: 3}
+    - {fileID: 21300000, guid: 1725fc99044bc194bb8d5adbd79a7815, type: 3}
+    - {fileID: 21300000, guid: 04ca3ce61b508ed478afb91414bc83c3, type: 3}
+    - {fileID: 21300000, guid: 8a3910358ba833e4da529c45be3640ee, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51666665
+    m_StopTime: 0.26666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -75,4 +72,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: Damaged
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
